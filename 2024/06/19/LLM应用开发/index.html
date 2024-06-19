@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Hexo" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2024/06/19/LLM%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2024-06-19T14:28:23.369Z" />
+  
+  <meta property="og:article:author" content="John Doe" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/MrWillCom" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="https://codepen.io/mrwillcom" target="_blank" aria-label="CodePen">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="https://www.patreon.com/MrWillCom" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="https://noc.social/@MrWillCom" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="https://discord.gg/UKuFDjcfY8" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+
+        
+        <div class="date" id="date">
+            <span>June</span>
+            <span>19,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title"></h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="RAG"><a href="#RAG" class="headerlink" title="RAG"></a>RAG</h2><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>目前 LLM 面临的主要问题有：</p>
+<ul>
+<li><p><strong>信息偏差&#x2F;幻觉：</strong> LLM 有时会产生与客观事实不符的信息，导致用户接收到的信息不准确。RAG 通过检索数据源，辅助模型生成过程，确保输出内容的精确性和可信度，减少信息偏差。</p>
+</li>
+<li><p><strong>知识更新滞后性：</strong> LLM 基于静态的数据集训练，这可能导致模型的知识更新滞后，无法及时反映最新的信息动态。RAG 通过实时检索最新数据，保持内容的时效性，确保信息的持续更新和准确性。</p>
+</li>
+<li><p><strong>内容不可追溯：</strong> LLM 生成的内容往往缺乏明确的信息来源，影响内容的可信度。RAG 将生成内容与检索到的原始资料建立链接，增强了内容的可追溯性，从而提升了用户对生成内容的信任度。</p>
+</li>
+<li><p><strong>领域专业知识能力欠缺：</strong> LLM 在处理特定领域的专业知识时，效果可能不太理想，这可能会影响到其在相关领域的回答质量。RAG 通过检索特定领域的相关文档，为模型提供丰富的上下文信息，从而提升了在专业领域内的问题回答质量和深度。</p>
+</li>
+<li><p><strong>推理能力限制：</strong> 面对复杂问题时，LLM 可能缺乏必要的推理能力，这影响了其对问题的理解和回答。RAG 结合检索到的信息和模型的生成能力，通过提供额外的背景知识和数据支持，增强了模型的推理和理解能力。</p>
+</li>
+<li><p><strong>应用场景适应性受限：</strong> LLM 需在多样化的应用场景中保持高效和准确，但单一模型可能难以全面适应所有场景。RAG 使得 LLM 能够通过检索对应应用场景数据的方式，灵活适应问答系统、推荐系统等多种应用场景。</p>
+</li>
+<li><p><strong>长文本处理能力较弱：</strong> LLM 在理解和生成长篇内容时受限于有限的上下文窗口，且必须按顺序处理内容，输入越长，速度越慢。<strong>RAG 通过检索和整合长文本信息，强化了模型对长上下文的理解和生成，有效突破了输入长度的限制，同时降低了调用成本，并提升了整体的处理效率</strong>。</p>
+</li>
+</ul>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
+<li><p><strong>数据处理阶段</strong></p>
+<ol>
+<li><p>对原始数据进行清洗和处理。</p>
+</li>
+<li><p>将处理后的数据转化为检索模型可以使用的格式。</p>
+</li>
+<li><p>将处理后的数据存储在对应的数据库中。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>检索阶段</strong></p>
+<ol>
+<li>将用户的问题输入到检索系统中，从数据库中检索相关信息。</li>
+</ol>
+</li>
+<li><p><strong>增强阶段</strong></p>
+<ol>
+<li>对检索到的信息进行处理和增强，以便生成模型可以更好地理解和使用。</li>
+</ol>
+</li>
+<li><p><strong>生成阶段</strong></p>
+<ol>
+<li>将增强后的信息输入到生成模型中，生成模型根据这些信息生成答案。</li>
+</ol>
+</li>
+</ol>
+<h2 id="LangChain"><a href="#LangChain" class="headerlink" title="LangChain"></a>LangChain</h2><p>从 2022 年开始，许多机构和个人相继推出了多个开源项目，旨在<strong>帮助开发者们快速构建基于大型语言模型的端到端应用程序或工作流程</strong>。其中一个备受关注的项目就是 LangChain 框架。</p>
+<h2 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h2><p><img src="http://shawn-img.oss-cn-beijing.aliyuncs.com/img/20240615225329.png" alt="image.png"><br>LangChian 作为一个大语言模型开发框架，可以将 LLM 模型（对话模型、embedding 模型等）、向量数据库、交互层 Prompt、外部知识、外部代理工具整合到一起，进而可以自由构建 LLM 应用。 LangChain 主要由以下 6 个核心组件组成:</p>
+<ul>
+<li><p><strong>模型输入&#x2F;输出（Model I&#x2F;O）</strong>：与语言模型交互的接口</p>
+</li>
+<li><p><strong>数据连接（Data connection）</strong>：与特定应用程序的数据进行交互的接口</p>
+</li>
+<li><p><strong>链（Chains）</strong>：将组件组合实现端到端应用。比如后续我们会将搭建<code>检索问答链</code>来完成检索问答。</p>
+</li>
+<li><p><strong>记忆（Memory）</strong>：用于链的多次运行之间持久化应用程序状态；</p>
+</li>
+<li><p><strong>代理（Agents）</strong>：扩展模型的推理能力。用于复杂的应用的调用序列；</p>
+</li>
+<li><p><strong>回调（Callbacks）</strong>：扩展模型的推理能力。用于复杂的应用的调用序列；</p>
+</li>
+</ul>
+<h2 id="LLM开发"><a href="#LLM开发" class="headerlink" title="LLM开发"></a>LLM开发</h2><p> <code>大模型开发</code>：用 Prompt Engineering 来替代子模型的训练调优，通过 Prompt 链路组合来实现业务逻辑，用一个通用大模型 + 若干业务 Prompt 来解决任务，从而将传统的模型训练调优转变成了更简单、轻松、低成本的 Prompt 设计调优。</p>
+<p>验证：</p>
+<ul>
+<li><code>大模型开发</code>：流程更为灵活和敏捷。从实际业务需求出发构造小批量验证集，设计合理 Prompt 来满足验证集效果。然后，将不断从业务逻辑中收集当下 Prompt 的 Bad Case，并将 Bad Case 加入到验证集中，针对性优化 Prompt，最后实现较好的泛化效果。</li>
+</ul>
+<h3 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h3><ol>
+<li><p><strong>确定目标</strong>。<br> 基于个人知识库的问答助手</p>
+</li>
+<li><p><strong>设计功能</strong>。<br> 爬取并总结的 MarkDown 文件及用户上传文档向量化，并创建知识库<br> 选择知识库，检索用户提问的知识片段<br> 提供知识片段与提问，获取大模型回答<br> 流式回复<br> 历史对话记录</p>
+</li>
+<li><p><strong>整体架构</strong>。<br> 使用Langchain框架<br> 模型：免费API<br> 数据库：Chroma<br> 前后端：Gradio 和 Streamlit</p>
+</li>
+<li><p><strong>搭建数据库</strong>。个性化大模型应用需要有个性化数据库进行支撑。由于大模型应用需要进行向量语义检索，一般使用诸如 <strong>Chroma 的向量数据库</strong>。<br> 在该步骤中，我们需要收集数据并进行预处理，<br> 文档词向量化存储到数据库中。<br> 词向量数据导入<strong>Chroma 的向量数据库</strong>，建立索引</p>
+</li>
+<li><p><strong>Prompt Engineering</strong>。<br> 构建 Prompt Engineering，实现大模型回答功能，根据用户提问和知识库内容生成回答<br> 实现流式回复，允许用户进行多轮对话。<br> 添加历史对话记录功能，保存用户与助手的交互历史。</p>
+</li>
+<li><p><strong>验证迭代</strong>。进行实际业务测试，探讨边界情况，找到 Bad Case，并针对性分析 Prompt 存在的问题，从而不断迭代优化，直到达到一个较为稳定、可以基本实现目标的 Prompt 版本。</p>
+</li>
+<li><p><strong>前后端搭建</strong>。搭建前后端，设计产品页面，让我们的应用能够上线成为产品。前后端开发是非常经典且成熟的领域，此处就不再赘述，我们采用 Gradio 和 Streamlit，可以帮助个体开发者迅速搭建可视化页面实现 Demo 上线。</p>
+</li>
+<li><p><strong>体验优化</strong>。在完成前后端搭建之后，应用就可以上线体验了。接下来就需要进行长期的用户体验跟踪，记录 Bad Case 与用户负反馈，再针对性进行优化即可。</p>
+</li>
+</ol>
+<h1 id="Prompt-和-API"><a href="#Prompt-和-API" class="headerlink" title="Prompt 和 API"></a>Prompt 和 API</h1><h2 id="Temperature"><a href="#Temperature" class="headerlink" title="Temperature"></a>Temperature</h2><p>LLM 生成是具有随机性的，在模型的顶层通过选取不同预测概率的预测结果来生成最后的结果。我们一般可以通过控制 temperature 参数来控制 LLM 生成结果的随机性与创造性。</p>
+<p>Temperature 一般取值在 0~1 之间，当取值较低接近 0 时，预测的随机性会较低，产生更保守、可预测的文本，不太可能生成意想不到或不寻常的词。当取值较高接近 1 时，预测的随机性会较高，所有词被选择的可能性更大，会产生更有创意、多样化的文本，更有可能生成不寻常或意想不到的词。<br>对于不同应用场景选择不同Temperature是合适的</p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by John Doe, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/04/16/Shawn-s-First-Blog/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Shawn&#39;s First Blog</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/rsa-cli" class="item">RSA CLI</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/a-calendar" class="item">A Calendar</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/auto-mirroring-bucket" class="item">Auto Mirroring Bucket</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom" class="item">GitHub</a>
+                
+                <a target="_blank" rel="noopener" href="https://codepen.io/mrwillcom" class="item">CodePen</a>
+                
+                <a target="_blank" rel="noopener" href="https://www.patreon.com/MrWillCom" class="item">Patreon</a>
+                
+                <a target="_blank" rel="noopener" href="https://noc.social/@MrWillCom" class="item">Mastodon</a>
+                
+                <a target="_blank" rel="noopener" href="https://discord.gg/UKuFDjcfY8" class="item">Discord</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2024 John Doe<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
